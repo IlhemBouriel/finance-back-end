@@ -28,4 +28,23 @@ public class HelloController {
 		{
 			return service.getAllCours();
 		}
+		
+		@RequestMapping("/palmaresH")
+		public Map<Integer, Map<String,String>> parsePalmaresH()
+		{
+			return service.getPalmaresH();
+		}
+		
+		@RequestMapping("/palmaresB")
+		public Map<Integer, Map<String,String>> parsePalmaresB()
+		{
+			return service.getPalmaresB();
+		}
+		
+		@RequestMapping("/palmaresV")
+		public Map<Integer, Map<String,String>> parsePalmaresV()
+		{
+			return service.getPalmaresV();
+		}
+		
 }

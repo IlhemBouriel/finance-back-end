@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 
 import com.example.SpringFinance.Model.Topic;
 import com.example.SpringFinance.Utilities.CoursParser;
+import com.example.SpringFinance.Utilities.PalmaresParser;
 
 @Service
 public class HelloService {
 	
 	@Autowired
 	public CoursParser parserC;
+	@Autowired
+	public PalmaresParser parseP;
 
 	private List<Topic> topics = Arrays.asList(
 			new Topic("spring", "SpringFramework"),
@@ -30,5 +33,20 @@ public class HelloService {
 	public Map<String, String[]> getAllCours()
 	{
 		return parserC.getAllCours();
+	}
+	
+	public Map<Integer, Map<String,String>> getPalmaresH()
+	{
+		return parseP.getTopHausses();
+	}
+	
+	public Map<Integer, Map<String,String>> getPalmaresB()
+	{
+		return parseP.getTopBaisses();
+	}
+	
+	public Map<Integer, Map<String,String>> getPalmaresV()
+	{
+		return parseP.getTopVolumes();
 	}
 }
